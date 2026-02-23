@@ -1,10 +1,7 @@
-const mongoose= require('mongoose');
+const mongoose = require('mongoose');
+require('./order.model'); // import your schemas
 
-mongoose.connect('monogodb://localhost:27017/ecommerceOrders',{useNewUrlParser:true},(err)=>{
-    if (!err){
-        console.log('MongoDB connected');
-    } else{
-        console.log('error: '+err);
-    }
-});
-require('./order.model');
+// Connect to MongoDB (modern v8 syntax, no extra options)
+mongoose.connect('mongodb://localhost:27017/ecommerceOrders')
+    .then(() => console.log('MongoDB connected ' + 'http://localhost:3000/'))
+    .catch(err => console.log('MongoDB connection error: ' + err));

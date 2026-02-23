@@ -1,76 +1,133 @@
-body{
+/* ============================= */
+/* GLOBAL */
+/* ============================= */
+
+body {
     padding-top: 3rem;
     padding-bottom: 3rem;
     color: #5a5a5a;
 }
 
-.carousel{
-    margin-bottom: 2rem;
-    z-index: 200;
+/* ============================= */
+/* CAROUSEL */
+/* ============================= */
+
+.carousel {
+    margin-bottom: 3rem;
 }
 
-.carousel-caption{
-    bottom: 3rem;
-    z-index: 10;
-}
-
-.carousel-item{
+/* Carousel Item */
+.carousel-item {
+    position: relative;
     height: 32rem;
-    background-color: #777;
+    overflow: hidden;
 }
 
-.carousel-item > img{
+/* Carousel Image */
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 6s ease-in-out;
+}
+
+/* Subtle zoom effect */
+.carousel-item.active img {
+    transform: scale(1.08);
+}
+
+/* Dark overlay */
+.carousel-item::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    height: 32rem;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
 }
 
-.marketing .col-lg-4{
+/* Keep Bootstrap default caption position */
+.carousel-caption {
+    z-index: 2;
+    color: #fff;
+    bottom: 3rem;
+}
+
+/* Improve text readability */
+.carousel-caption h1,
+.carousel-caption p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* ============================= */
+/* MARKETING SECTION */
+/* ============================= */
+
+.marketing .col-lg-4 {
     margin-bottom: 1.5rem;
     text-align: center;
 }
 
-.marketing h2{
+.marketing h2 {
     font-weight: 400;
 }
 
-.marketing .col-lg-4 p{
+.marketing .col-lg-4 p {
     margin-right: .75rem;
     margin-left: .75rem;
 }
 
-.featurette-divider{
+/* ============================= */
+/* FEATURETTES */
+/* ============================= */
+
+.featurette-divider {
     margin: 5rem 0;
 }
 
-.featurette-heading{
+.featurette-heading {
     font-weight: 300;
-    line-height: 1;
-    letter-spacing: -0.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.05rem;
 }
 
-@media (min-width:40em) {
-    .carousel-caption p{
-        margin-bottom: 1.25rem;
-        font-size: 1.25rem;
-        line-height: 1.4;
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (min-width: 40em) {
+    .carousel-caption p {
+        font-size: 1.3rem;
+        line-height: 1.5;
     }
 
-    .featurette-heading{
+    .featurette-heading {
         font-size: 50px;
     }
 }
 
-@media (min-width:62em) {
-    .featurette-heading{
+@media (min-width: 62em) {
+    .featurette-heading {
         margin-top: 7rem;
     }
 }
 
-@media (max-width:400px) {
-    .carousel,.figuritas{
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 24rem;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .carousel,
+    .figuritas {
         display: none;
     }
 }

@@ -1,24 +1,42 @@
 require('./models/db');
 const express = require('express');
 const path = require('path');
-const exphbs = require('express-handlebars');
+const { engine } = require('express-handlebars');
 const bodyParser = require('body-parser');
 const orderController = require('./controllers/orderController');
 
-var app = express();
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+const app = express();
+
+// Body parser
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname,'/public')));
-app.set('views',path.join(__dirname,'views'));
-app.engine('hbs',exphbs({
+
+// Static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Views
+app.set('views', path.join(__dirname, 'views'));
+app.engine('hbs', engine({
     extname: 'hbs',
     defaultLayout: 'mainLayout',
-    layoutsDir: __dirname+'/views/'
-}))
-app.set('view engine','hbs');
-app.listen(3000,()=>{
-    console.log('server on port: 3000')
+    layoutsDir: path.join(__dirname, 'views'),
+    runtimeOptions: {                              // <-- add this
+        allowProtoPropertiesByDefault: true,
+        allowProtoMethodsByDefault: true
+    }
+}));
+app.set('view engine', 'hbs');
+
+// Routes
+app.use('/', orderController);
+
+// 404 handler
+app.use((req, res) => {
+    res.status(404).send('Page not found');
 });
-app.use('/',orderController);
+
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});

@@ -7,7 +7,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav mr-auto menu">
+            <ul class="navbar-nav me-auto menu">
                 <li class="nav-item active">
                     <a href="#" class="nav-link">Home</a>
                 </li>
@@ -21,11 +21,12 @@
                     <a href="#salad" class="nav-link">Salad</a>
                 </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
+
+            <form class="d-flex">
                 <a href="/cart" class="text-white nav-link">
-                    <i  class="text-warning fas fa-shopping-cart"></i> Shopping Cart <i style="color: yellow;" id="cart_n"></i>
+                    <i class="text-warning fas fa-shopping-cart"></i> Shopping Cart <i style="color: yellow;" id="cart_n"></i>
                 </a>
-                <a href="/admin" class="nav-link disable text-white">
+                <a href="/admin" class="nav-link disabled text-white ms-5 me-3">  <!-- ms-2 adds left margin -->
                     <i class="far fa-user"></i> Administrator
                 </a>
             </form>
@@ -34,53 +35,51 @@
 </header>
 
 <main role="main">
-    <div class="craousel slide" data-ride="craousel" id="myCraousel">
-        <ol class="craousel-indicators">
-            <li style="z-index: 102;" data-target="#myCraousel" data-slide-to="0" class="active"></li>
-            <li style="z-index: 102;" data-target="#myCraousel" data-slide-to="1" ></li>
-            <li style="z-index: 102;" data-target="#myCraousel" data-slide-to="2" ></li>
-        </ol>
-        <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="imgFilter first-slide" src="img/carousel/slide1" alt="first slide">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Organic Store</h1>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, quae. Aliquam modi voluptatum autem incidunt, velit itaque voluptas distinctio voluptatem. Blanditiis quisquam incidunt sunt quaerat officia modi accusamus, voluptatum alias.</p>
-                            <p><a href="#" role="button" class="btn btn-primary btn-lg">Products</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="imgFilter second-slide" src="/img/carousel/slide2" alt="second slide">
-                    <div class="container">
-                        <div class="carousel-caption text-left">
-                            <h1>Organic Store</h1>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, quae. Aliquam modi voluptatum autem incidunt, velit itaque voluptas distinctio voluptatem. Blanditiis quisquam incidunt sunt quaerat officia modi accusamus, voluptatum alias.</p>
-                            <p><a href="#" role="button" class="btn btn-primary btn-lg">Products</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="imgFilter third-slide" src="img/carousel/slide3" alt="third slide">
-                    <div class="container">
-                        <div class="carousel-caption text-right">
-                            <h1>Organic Store</h1>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, quae. Aliquam modi voluptatum autem incidunt, velit itaque voluptas distinctio voluptatem. Blanditiis quisquam incidunt sunt quaerat officia modi accusamus, voluptatum alias.</p>
-                            <p><a href="#" role="button" class="btn btn-primary btn-lg">Products</a></p>
-                        </div>
-                    </div>
-                </div>                
-        </div>
-        <a style="z-index: 101;" class="carousel-control-prev" role="button" data-slide="prev" href="#myCarousel">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previus</span>
-        </a>
-        <a style="z-index: 101;" class="carousel-control-next" role="button" data-slide="next" href="#myCarousel">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
+
+    <div class="carousel-inner text-center">
+        <div class="carousel-item active">
+            <img src="img/carousel/slide1.jpg" class="d-block w-100 carousel-img mx-auto" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Organic Store</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Products</a></p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="img/carousel/slide2.png" class="d-block w-100 carousel-img mx-auto" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block text-start">
+                <h1>Organic Store</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Products</a></p>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="img/carousel/slide3.png" class="d-block w-100 carousel-img mx-auto" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block text-end">
+                <h1>Organic Store</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+                <p><a class="btn btn-primary btn-lg" href="#" role="button">Products</a></p>
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
     <div class="container marketing">
         <br>
