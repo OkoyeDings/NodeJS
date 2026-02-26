@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+:root{
+  --font-primary: "inter",sans-serif;
+  --font-secondary: "Dosis", sans-serif;
+  --bg-primary: rgb(109, 74, 174);
+  --bg-secondary: rgba(206, 206, 206, 0.889);
+  --color-w: #fff;
+  --font-14: 14px;
+  --font-12: 12px;
+}
+
+body{
+  font: var(--font-secondary);
+  font-size: var(--font-14);
+}
+
+.bg-purple{
+  background: var(--bg-primary);
+}
+
+.headerWrapper .top-strip{
+  padding: 8px 0px;
+}
+
+.headerWrapper .top-strip p{
+  color: var(--color-w);
+  font-size: var(--font-12);
+  font-weight: 500;
+}
+
+.headerWrapper .header{
+  width: 100%;
+  height: auto;
+  padding: 15px 0px;
+}
+
+.logoWrapper img{
+  width: 100%;
+}
+
+.headerWrapper .header .part2 .countryDrop{
+  width: 150px;
+  height: 60px;
+  min-width: 150px;
+  text-align: left;
+  justify-content: flex-start !important;
+  color: #000;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 7px;
+  padding: 10px 10px;
+}
+
+.headerWrapper .header .part2 .countryDrop .label{
+  font-size: var(--font-12) !important;
+  text-transform: capitalize !important;
+  color: rgba(0,0,0,0.5) !important;
+  line-height: 16px;
+}
+
+.headerWrapper .header .part2 .countryDrop .name{
+  font-size: var(--font-14) !important;
+  text-transform: capitalize !important;
+  color:var(--bg-primary)!important;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.headerWrapper .header .part2 .countryDrop span.ml-auto svg{
+  opacity: 0.7;
+}
+
+header .headerSearch{
+  width: 60%;
+  height: 60px;
+  background: var(--bg-secondary);
+  padding: 10px;
+  position: relative;
+}
+
+header .headerSearch input{
+  background: transparent !important;
+  outline: none;
+  font-size: var(--font-14);
+  border: none;
+  width: 100%;
+  height: 100%;
+  padding: 0px 20px;
+}
+
+header .headerSearch button{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  z-index: 100;
+  min-width: 40px !important;
+  height: 40px !important;
+  width: 100px !important;
+  border-radius: 50px !important;
+}
